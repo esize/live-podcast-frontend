@@ -24,25 +24,27 @@
 
       <div v-if="me.name">
         <SlickList lockAxis="y" v-model="me.albums" @input="changed = true" class="grid-container">
-          <div class="list">
-            <h2>{{me.name}}</h2>
-            <SlickItem
-              v-for="(item, index) in me.albums"
-              :index="index"
-              :key="index"
-              :disabled="inputDisabled"
-              class="slick-item"
-            >{{index +1 }}. {{ item.title }}</SlickItem>
+          <div>
+            <div class="list">
+              <h2>{{me.name}}</h2>
+              <SlickItem
+                v-for="(item, index) in me.albums"
+                :index="index"
+                :key="index"
+                :disabled="inputDisabled"
+                class="slick-item"
+              >{{index +1 }}. {{ item.title }}</SlickItem>
+            </div>
           </div>
           <div v-for="user in users" :key="user.name">
             <div v-if="user.name !== me.name" class="list">
               <h2>{{user.name}}</h2>
               <ul>
                 <li
-                  v-for="album in user.albums"
+                  v-for="(album, index) in user.albums"
                   :key="album.title"
                   class="socket-item"
-                >{{album.title}}</li>
+                >{{index +1}}. {{album.title}}</li>
               </ul>
             </div>
           </div>
