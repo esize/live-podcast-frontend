@@ -69,7 +69,7 @@ export default {
     return {
       inputDisabled: false,
       changed: false,
-      socket: io("localhost:5000"),
+      socket: io("https://live-podcast-tool.herokuapp.com/"),
       me: {},
       inputName: "",
       users: {},
