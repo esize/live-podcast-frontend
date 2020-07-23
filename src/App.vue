@@ -34,8 +34,8 @@
               class="slick-item"
             >{{index +1 }}. {{ item.title }}</SlickItem>
           </div>
-          <div class="list" v-for="user in users" :key="user.name">
-            <div v-if="user.name !== me.name">
+          <div v-for="user in users" :key="user.name">
+            <div v-if="user.name !== me.name" class="list">
               <h2>{{user.name}}</h2>
               <ul>
                 <li
